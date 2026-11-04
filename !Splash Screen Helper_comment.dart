@@ -48,7 +48,7 @@
 //   ios: true
 //   image_path: "assets/icons/app_icon.png"
 //   adaptive_icon_background: "#5F33E1"
-//   adaptive_icon_foreground: "assets/icons/app_icon_logo.png"
+//   adaptive_icon_foreground: "assets/icons/app_icon.png"
 //   remove_alpha_ios: true
 
 // final run this
