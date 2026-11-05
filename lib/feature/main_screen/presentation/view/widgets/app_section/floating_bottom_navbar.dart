@@ -24,7 +24,20 @@ class FloatingBottomNavBar extends StatelessWidget {
   ];
 
   Widget _buildCenterWidget() {
-    return const Icon(Icons.newspaper_rounded, color: Colors.white, size: 27);
+    final bool isSelected = selectedIndex == 2;
+
+    return AnimatedSwitcher(
+      duration: const Duration(milliseconds: 300),
+      transitionBuilder: (child, animation) {
+        return ScaleTransition(scale: animation, child: child);
+      },
+      child: Icon(
+        Icons.newspaper_rounded,
+        key: ValueKey(isSelected),
+        color: isSelected ? Colors.white : _inactiveColor,
+        size: 27,
+      ),
+    );
   }
 
   @override
@@ -53,6 +66,7 @@ class FloatingBottomNavBar extends StatelessWidget {
         fontWeight: FontWeight.w500,
         letterSpacing: 0.1,
       ),
+
       iconAnimationDuration: const Duration(milliseconds: 350),
       enableHaptics: true,
     );
